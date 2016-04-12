@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "jzfp.com.precisionpoverty"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        config {
+            keyAlias 'jiandanbaoxian'
+            keyPassword 'jiandanbaoxian'
+            storeFile file('jiandanbaoxian.keystore')
+            storePassword 'jiandanbaoxian'
+        }
+    }
+    compileSdkVersion 23
+
+    buildToolsVersion "22.0.1"
+
+    buildTypes {
+        release {
+            multiDexEnabled true
+
+            minifyEnabled false
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            proguardFile 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            multiDexEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            proguardFile 'proguard-rules.pro'
+        }
+
+    }
+    productFlavors {
+        _360市场_ {
+            manifestPlaceholders = [CHANNEL_NAME: "360市场"]
+        }
+        _友盟_ {
+            manifestPlaceholders = [CHANNEL_NAME: "友盟"]
+        }
+        _豌豆荚_ {
+            manifestPlaceholders = [CHANNEL_NAME: "豌豆荚"]
+        }
+        _小米市场_ {
+            manifestPlaceholders = [CHANNEL_NAME: "小米市场"]
+        }
+        _QQ应用宝_ {
+            manifestPlaceholders = [CHANNEL_NAME: "QQ应用宝"]
+        }
+        _安智_ {
+            manifestPlaceholders = [CHANNEL_NAME: "安智"]
+        }
+        _QQ推广_ {
+            manifestPlaceholders = [CHANNEL_NAME: "QQ推广"]
+        }
+        _华为_ {
+            manifestPlaceholders = [CHANNEL_NAME: "华为"]
+        }
+
+        _测试包_ {
+            manifestPlaceholders = [CHANNEL_NAME: "测试包"]
+        }
+
+        _魅族_ {
+            manifestPlaceholders = [CHANNEL_NAME: "魅族"]
+        }
+        _酷传_ {
+            manifestPlaceholders = [CHANNEL_NAME: "酷传"]
+        }
+
+        _安心车险_ {
+            manifestPlaceholders = [CHANNEL_NAME: "安心车险"]
+        }
+
+        _公测包_ {
+            manifestPlaceholders = [CHANNEL_NAME: "公测包"]
+        }
+
+        _百度_ {
+            manifestPlaceholders = [CHANNEL_NAME: "百度"]
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    allprojects {
+        repositories {
+            mavenCentral()
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+
+//    compile 'com.android.support:design:23.2.1'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+
+}

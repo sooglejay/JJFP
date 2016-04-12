@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">精准扶贫</string>
+    <string name="tab_service">服务</string>
+    <string name="tab_requirement">需求</string>
+    <string name="tab_me">我的</string>
+    <string name="tab_department">机构</string>
+    <string name="tab_individual">个人</string>
+
+
+</resources>
