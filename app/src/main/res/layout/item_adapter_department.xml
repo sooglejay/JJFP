@@ -1,27 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:animateLayoutChanges="true"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/middle_padding"
         android:orientation="horizontal">
 
         <jzfp.com.precisionpoverty.widgets.RoundImageView
             android:id="@+id/avatar"
             android:layout_width="54dp"
-
             android:layout_height="54dp"
-            android:layout_margin="@dimen/middle_padding"
             android:src="@drawable/apple_1" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_margin="8dp"
             android:orientation="vertical">
 
             <TextView
@@ -44,8 +42,6 @@
             android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
             android:gravity="right"
             android:text="2016-02-12"
             android:textColor="@color/black_color"
@@ -56,7 +52,7 @@
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/test_3" />
+        android:src="@drawable/test_4" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="东城区锣鼓队招募新人啦..."
+                    android:text="新春电影展播"
                     android:textColor="@color/black_color"
                     android:textSize="18sp" />
 
@@ -97,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="这里有熟悉的秧歌，有专家的指导，来吧，舞动你的身姿"
+                android:text="免费电影，免费讲座，只为有你"
                 android:textColor="@color/black_color"
                 android:textSize="10sp" />
 
@@ -110,8 +106,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="秧歌"
                     android:background="@drawable/shape_label"
+                    android:text="电影"
                     android:textColor="@color/black_color"
                     android:textSize="10sp" />
 
@@ -121,12 +117,13 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/shape_label"
-                    android:text="招人"
+                    android:text="公益"
                     android:textColor="@color/black_color"
                     android:textSize="10sp" />
             </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
