@@ -11,18 +11,18 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.umeng.update.UmengUpdateAgent;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import jzfp.com.precisionpoverty.R;
 import jzfp.com.precisionpoverty.event.IntEvent;
+import jzfp.com.precisionpoverty.fragment.IndividualFragment;
+import jzfp.com.precisionpoverty.fragment.RequirementFragment;
 import jzfp.com.precisionpoverty.fragment.MeFragment;
+import jzfp.com.precisionpoverty.fragment.DepartmentFragment;
+import jzfp.com.precisionpoverty.fragment.ServiceFragment;
 import jzfp.com.precisionpoverty.widgets.ScrollableViewPager;
 import jzfp.com.precisionpoverty.widgets.TabBar;
 
@@ -108,16 +108,16 @@ public class MainActivity extends BaseActivity {
             Fragment fragment = null;
             switch (position) {
                 case 0:
-                    fragment = new MeFragment();
+                    fragment = new RequirementFragment();
                     break;
                 case 1:
-                    fragment = new MeFragment();
+                    fragment = new ServiceFragment();
                     break;
                 case 2:
-                    fragment = new MeFragment();
+                    fragment = new IndividualFragment();
                     break;
                 case 3:
-                    fragment = new MeFragment();
+                    fragment = new DepartmentFragment();
                     break;
                 case 4:
                     fragment = new MeFragment();
@@ -130,7 +130,7 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public int getCount() {
-            return 4;
+            return 5;
         }
     }
 

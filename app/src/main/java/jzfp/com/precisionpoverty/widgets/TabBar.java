@@ -102,6 +102,7 @@ public class TabBar extends LinearLayout {
         container3 = findViewById(R.id.layout3);
         container4 = findViewById(R.id.layout4);
 
+
         mAnimatorListener = new AnimatorListener();
 
         container0.setOnClickListener(new OnClickListener() {
@@ -145,6 +146,7 @@ public class TabBar extends LinearLayout {
             }
         });
 
+
         container4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,7 +178,10 @@ public class TabBar extends LinearLayout {
                 container2.setVisibility(flag);
                 break;
             case 3:
-                container3.setVisibility(flag);
+                container4.setVisibility(flag);
+                break;
+            case 4:
+                container4.setVisibility(flag);
                 break;
             default:
                 break;
@@ -212,6 +217,7 @@ public class TabBar extends LinearLayout {
                 iv3.setAlpha(1.0f);
                 iv4Selected.setAlpha(0f);
                 iv4.setAlpha(1.0f);
+
                 break;
             case 1:
 
@@ -235,6 +241,7 @@ public class TabBar extends LinearLayout {
                 iv3.setAlpha(1.0f);
                 iv4Selected.setAlpha(0f);
                 iv4.setAlpha(1.0f);
+
                 break;
             case 2:
 
@@ -249,7 +256,6 @@ public class TabBar extends LinearLayout {
                 iv1.setAlpha(1.0f);
                 iv3Selected.setAlpha(0f);
                 iv3.setAlpha(1.0f);
-
                 iv4Selected.setAlpha(0f);
                 iv4.setAlpha(1.0f);
 
@@ -328,9 +334,10 @@ public class TabBar extends LinearLayout {
                 break;
             case 3:
                 reddot3.setVisibility(result);
+                break;
             case 4:
                 reddot4.setVisibility(result);
-                break;
+
             default:
                 break;
         }
@@ -419,7 +426,6 @@ public class TabBar extends LinearLayout {
             iv4.setAlpha(1 - positionOffset);
 
         }
-
 
     }
 

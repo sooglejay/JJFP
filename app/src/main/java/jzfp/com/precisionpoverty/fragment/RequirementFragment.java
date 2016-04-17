@@ -8,25 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-
 import jzfp.com.precisionpoverty.Constants.StringConstant;
 import jzfp.com.precisionpoverty.R;
 import jzfp.com.precisionpoverty.adapter.RequirementAdapter;
 import jzfp.com.precisionpoverty.widgets.TitleBar;
 
-/**
- * 我的-主框架-tab3
- */
-public class MeFragment extends BaseFragment {
+
+public class RequirementFragment extends BaseFragment {
 
     private TitleBar titleBar;
+
     private Activity context;
-
-
+    private ListView listView;
+    private RequirementAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_5, container, false);
+        return inflater.inflate(R.layout.fragment_1, container, false);
     }
 
     public void onResume() {
@@ -42,15 +40,18 @@ public class MeFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         setUp(view, savedInstanceState);
-
     }
 
 
     private void setUp(View view, Bundle savedInstanceState) {
         context = this.getActivity();
-        titleBar = (TitleBar) view.findViewById(R.id.title_bar);
-        titleBar.initTitleBarInfo(StringConstant.title_me, -1, -1, "", "");
 
+        titleBar = (TitleBar) view.findViewById(R.id.title_bar);
+        titleBar.initTitleBarInfo(StringConstant.title_requirement, -1, -1, "", "");
+
+        listView = (ListView) view.findViewById(R.id.list_view);
+        adapter = new RequirementAdapter(context);
+        listView.setAdapter(adapter);
     }
 
 

@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!--需求-->
         <LinearLayout
             android:id="@+id/layout0"
             style="@style/home_bottom_bar_container">
@@ -113,8 +112,6 @@
         </LinearLayout>
 
 
-
-        <!--机构-->
         <LinearLayout
             android:id="@+id/layout3"
             style="@style/home_bottom_bar_container">
@@ -147,8 +144,6 @@
                 android:text="@string/tab_department" />
 
         </LinearLayout>
-
-        <!--我的-->
         <LinearLayout
             android:id="@+id/layout4"
             style="@style/home_bottom_bar_container">
@@ -181,5 +176,7 @@
                 android:text="@string/tab_me" />
 
         </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>
