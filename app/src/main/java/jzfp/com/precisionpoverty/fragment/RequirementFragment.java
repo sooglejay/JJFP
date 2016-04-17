@@ -47,7 +47,17 @@ public class RequirementFragment extends BaseFragment {
         context = this.getActivity();
 
         titleBar = (TitleBar) view.findViewById(R.id.title_bar);
-        titleBar.initTitleBarInfo(StringConstant.title_requirement, -1, -1, "", "");
+        titleBar.setOnTitleBarClickListener(new TitleBar.OnTitleBarClickListener() {
+            @Override
+            public void onSearch(View v) {
+
+            }
+
+            @Override
+            public void onPlus(View v) {
+
+            }
+        });
 
         listView = (ListView) view.findViewById(R.id.list_view);
         adapter = new RequirementAdapter(context);

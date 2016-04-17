@@ -49,7 +49,17 @@ public class MeFragment extends BaseFragment {
     private void setUp(View view, Bundle savedInstanceState) {
         context = this.getActivity();
         titleBar = (TitleBar) view.findViewById(R.id.title_bar);
-        titleBar.initTitleBarInfo(StringConstant.title_me, -1, -1, "", "");
+        titleBar.setOnTitleBarClickListener(new TitleBar.OnTitleBarClickListener() {
+            @Override
+            public void onSearch(View v) {
+
+            }
+
+            @Override
+            public void onPlus(View v) {
+
+            }
+        });
 
     }
 

@@ -48,7 +48,17 @@ public class ServiceFragment extends BaseFragment {
         context = this.getActivity();
 
         titleBar = (TitleBar) view.findViewById(R.id.title_bar);
-        titleBar.initTitleBarInfo(StringConstant.title_service, -1, -1, "", "");
+        titleBar.setOnTitleBarClickListener(new TitleBar.OnTitleBarClickListener() {
+            @Override
+            public void onSearch(View v) {
+
+            }
+
+            @Override
+            public void onPlus(View v) {
+
+            }
+        });
         listView = (ListView) view.findViewById(R.id.list_view);
         adapter = new ServicementAdapter(context);
         listView.setAdapter(adapter);
