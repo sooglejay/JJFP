@@ -1,22 +1,22 @@
 package jzfp.com.precisionpoverty.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import jzfp.com.precisionpoverty.R;
+import jzfp.com.precisionpoverty.activity.RequirementDetailActivity;
 import jzfp.com.precisionpoverty.adapter.AreaSpinnerAdapter;
 import jzfp.com.precisionpoverty.adapter.KindSpinnerAdapter;
 import jzfp.com.precisionpoverty.adapter.RequirementAdapter;
@@ -27,12 +27,10 @@ public class RequirementFragment extends BaseFragment {
 
     private TitleBar titleBar;
 
-    private Activity context;
     private ListView listView;
-    private RequirementAdapter adapter;
+    private RequirementAdapter requirementMainListViewAdapter;
 
 
-    private View headerOfListView;
     private Spinner spinnerArea;
     private Spinner spinnerKind;
     private KindSpinnerAdapter kindSpinnerAdapter;
@@ -40,6 +38,8 @@ public class RequirementFragment extends BaseFragment {
     private List<String> kindListDatas = new ArrayList<>();
     private List<String> areaListDatas = new ArrayList<>();
 
+
+    private Activity activity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,30 +58,24 @@ public class RequirementFragment extends BaseFragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        context = this.getActivity();
+        activity = this.getActivity();
         setUpView(view, savedInstanceState);
         setDatas();
         setUpListener();
     }
 
     private void setDatas() {
-        kindListDatas.add("刷股");
-        kindListDatas.add("啊说");
-        kindListDatas.add("阿斯顿");
-        kindListDatas.add("叨逼叨");
-        kindListDatas.add("是的");
-        kindListDatas.add("阿萨");
-        kindListDatas.add("仿佛好");
-        kindListDatas.add("仿佛好");
+        kindListDatas.add("北京");
+        kindListDatas.add("四川");
+        kindListDatas.add("广西");
+        kindListDatas.add("湖南");
+        kindListDatas.add("甘肃");
+        kindListDatas.add("云南");
+        kindListDatas.add("贵州");
 
-        areaListDatas.add("刷股");
-        areaListDatas.add("啊说");
-        areaListDatas.add("阿斯顿");
-        areaListDatas.add("叨逼叨");
-        areaListDatas.add("是的");
-        areaListDatas.add("阿萨");
-        areaListDatas.add("仿佛好");
-        areaListDatas.add("仿佛好");
+        areaListDatas.add("农产");
+        areaListDatas.add("培训");
+        areaListDatas.add("文化宣传");
 
         kindSpinnerAdapter.notifyDataSetChanged();
         areaSpinnerAdapter.notifyDataSetChanged();
@@ -101,32 +95,28 @@ public class RequirementFragment extends BaseFragment {
 
             }
         });
-        listView.setOnTouchListener(new View.OnTouchListener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                float y = event.getY();
-                float x= event.getX();
-                Log.e("jwjw", event.getAction()+"   y="+y+"    x="+x);
-                return false;
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(activity, RequirementDetailActivity.class);
+                activity.startActivity(intent);
             }
         });
-    }
 
+    }
 
     private void setUpView(View view, Bundle savedInstanceState) {
         titleBar = (TitleBar) view.findViewById(R.id.title_bar);
         listView = (ListView) view.findViewById(R.id.list_view);
-        headerOfListView = View.inflate(getActivity(), R.layout.header_of_list_view_in_requirement_fragment, null);
+        spinnerKind = (Spinner) view.findViewById(R.id.spinner_kind);
+        spinnerArea = (Spinner) view.findViewById(R.id.spinner_area);
 
-        spinnerKind = (Spinner) headerOfListView.findViewById(R.id.spinner_kind);
-        spinnerArea = (Spinner) headerOfListView.findViewById(R.id.spinner_area);
-        listView.addHeaderView(headerOfListView);
-
-        adapter = new RequirementAdapter(context);
+        requirementMainListViewAdapter = new RequirementAdapter(activity);
         kindSpinnerAdapter = new KindSpinnerAdapter(getActivity(), kindListDatas);
         areaSpinnerAdapter = new AreaSpinnerAdapter(getActivity(), areaListDatas);
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(requirementMainListViewAdapter);
         spinnerArea.setAdapter(areaSpinnerAdapter);
         spinnerKind.setAdapter(kindSpinnerAdapter);
 
