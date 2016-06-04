@@ -13,7 +13,7 @@
 
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,10 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
 
 
-        <activity android:name=".activity.RequirementDetailActivity"></activity>
+        <activity android:name=".activity.requirement.RequirementDetailActivity"></activity>
+        <activity android:name=".activity.serve.ServeDetailActivity"></activity>
+        <activity android:name=".activity.me.MyMessageActivity"></activity>
+        <activity android:name=".activity.me.MyFriendActivity"></activity>
         <!-- ###################添加UmengAppkey###################### -->
         <meta-data
             android:name="UMENG_APPKEY"

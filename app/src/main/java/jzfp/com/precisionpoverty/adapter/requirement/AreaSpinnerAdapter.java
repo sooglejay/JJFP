@@ -1,6 +1,7 @@
-package jzfp.com.precisionpoverty.adapter;
+package jzfp.com.precisionpoverty.adapter.requirement;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,11 +17,11 @@ import jzfp.com.precisionpoverty.R;
 /**
  * Created by JammyQtheLab on 2015/12/16.
  */
-public class KindSpinnerAdapter extends BaseAdapter {
+public class AreaSpinnerAdapter extends BaseAdapter {
 
     private List<String> mDatas = new ArrayList<>();
 
-    public KindSpinnerAdapter(Activity activity, List<String> mDatas) {
+    public AreaSpinnerAdapter(Activity activity, List<String> mDatas) {
         this.activity = activity;
         this.mDatas = mDatas;
     }
@@ -46,7 +47,7 @@ public class KindSpinnerAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = new ViewHolder();
         if (view == null) {
-            view = View.inflate(activity, R.layout.item_adapter_spinner_kind, null);
+            view = View.inflate(activity, R.layout.item_adapter_spinner_area, null);
             holder.tvName = (TextView) view.findViewById(R.id.tv_name);
             view.setTag(holder);
         } else {
@@ -59,6 +60,5 @@ public class KindSpinnerAdapter extends BaseAdapter {
     private static class ViewHolder {
         private TextView tvName;
         private View.OnClickListener listener;
-
     }
 }

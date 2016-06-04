@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.fragment;
+package jzfp.com.precisionpoverty.fragment.individual;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import jzfp.com.precisionpoverty.Constants.StringConstant;
 import jzfp.com.precisionpoverty.R;
-import jzfp.com.precisionpoverty.adapter.IndividualAdapter;
+import jzfp.com.precisionpoverty.adapter.individual.IndividualAdapter;
+import jzfp.com.precisionpoverty.fragment.main.BaseFragment;
 import jzfp.com.precisionpoverty.widgets.TitleBar;
 
 public class IndividualFragment extends BaseFragment {

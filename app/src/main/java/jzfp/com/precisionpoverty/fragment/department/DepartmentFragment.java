@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.fragment;
+package jzfp.com.precisionpoverty.fragment.department;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,24 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import jzfp.com.precisionpoverty.Constants.StringConstant;
 import jzfp.com.precisionpoverty.R;
-import jzfp.com.precisionpoverty.adapter.RequirementAdapter;
-import jzfp.com.precisionpoverty.adapter.ServicementAdapter;
+import jzfp.com.precisionpoverty.adapter.department.DepartmentAdapter;
+import jzfp.com.precisionpoverty.fragment.main.BaseFragment;
 import jzfp.com.precisionpoverty.widgets.TitleBar;
 
-
-public class ServiceFragment extends BaseFragment {
+public class DepartmentFragment extends BaseFragment {
 
     private TitleBar titleBar;
 
     private Activity context;
     private ListView listView;
-    private ServicementAdapter adapter;
+    private DepartmentAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_2, container, false);
+        return inflater.inflate(R.layout.fragment_4, container, false);
     }
 
     public void onResume() {
@@ -59,8 +57,9 @@ public class ServiceFragment extends BaseFragment {
 
             }
         });
+
         listView = (ListView) view.findViewById(R.id.list_view);
-        adapter = new ServicementAdapter(context);
+        adapter = new DepartmentAdapter(context);
         listView.setAdapter(adapter);
 
     }

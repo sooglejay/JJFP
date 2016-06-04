@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.adapter;
+package jzfp.com.precisionpoverty.adapter.requirement;
 
 import android.app.Activity;
 import android.view.View;
@@ -8,27 +8,33 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jzfp.com.precisionpoverty.R;
 
 /**
  * Created by JammyQtheLab on 2015/12/16.
  */
-public class ServicementAdapter extends BaseAdapter {
+public class KindSpinnerAdapter extends BaseAdapter {
 
-    public ServicementAdapter(Activity activity) {
+    private List<String> mDatas = new ArrayList<>();
+
+    public KindSpinnerAdapter(Activity activity, List<String> mDatas) {
         this.activity = activity;
+        this.mDatas = mDatas;
     }
 
     private Activity activity;
 
     @Override
     public int getCount() {
-        return 8;
+        return mDatas.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return new Object();
+    public String getItem(int i) {
+        return mDatas.get(i);
     }
 
     @Override
@@ -40,18 +46,18 @@ public class ServicementAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = new ViewHolder();
         if (view == null) {
-            view = View.inflate(activity, R.layout.item_adapter_service, null);
+            view = View.inflate(activity, R.layout.item_adapter_spinner_kind, null);
+            holder.tvName = (TextView) view.findViewById(R.id.tv_name);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
+        holder.tvName.setText(getItem(i));
         return view;
     }
 
     private static class ViewHolder {
-        private TextView brand_name;
-        private ImageView imageView;
-        private LinearLayout item;
+        private TextView tvName;
         private View.OnClickListener listener;
 
     }

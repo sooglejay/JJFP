@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.fragment;
+package jzfp.com.precisionpoverty.fragment.serve;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,25 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-
-import jzfp.com.precisionpoverty.Constants.StringConstant;
 import jzfp.com.precisionpoverty.R;
-import jzfp.com.precisionpoverty.adapter.RequirementAdapter;
+import jzfp.com.precisionpoverty.adapter.serve.ServementAdapter;
+import jzfp.com.precisionpoverty.fragment.main.BaseFragment;
 import jzfp.com.precisionpoverty.widgets.TitleBar;
 
-/**
- * 我的-主框架-tab3
- */
-public class MeFragment extends BaseFragment {
+
+public class ServeFragment extends BaseFragment {
 
     private TitleBar titleBar;
+
     private Activity context;
-
-
+    private ListView listView;
+    private ServementAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_5, container, false);
+        return inflater.inflate(R.layout.fragment_2, container, false);
     }
 
     public void onResume() {
@@ -42,12 +40,12 @@ public class MeFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         setUp(view, savedInstanceState);
-
     }
 
 
     private void setUp(View view, Bundle savedInstanceState) {
         context = this.getActivity();
+
         titleBar = (TitleBar) view.findViewById(R.id.title_bar);
         titleBar.setOnTitleBarClickListener(new TitleBar.OnTitleBarClickListener() {
             @Override
@@ -60,6 +58,9 @@ public class MeFragment extends BaseFragment {
 
             }
         });
+        listView = (ListView) view.findViewById(R.id.list_view);
+        adapter = new ServementAdapter(context);
+        listView.setAdapter(adapter);
 
     }
 

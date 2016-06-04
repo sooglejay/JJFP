@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.fragment;
+package jzfp.com.precisionpoverty.fragment.main;
 
 
 import android.os.Bundle;

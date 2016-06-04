@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.adapter;
+package jzfp.com.precisionpoverty.adapter.me;
 
 import android.app.Activity;
 import android.view.View;
@@ -13,9 +13,9 @@ import jzfp.com.precisionpoverty.R;
 /**
  * Created by JammyQtheLab on 2015/12/16.
  */
-public class IndividualAdapter extends BaseAdapter {
+public class MyFriendAdapter extends BaseAdapter {
 
-    public IndividualAdapter(Activity activity) {
+    public MyFriendAdapter(Activity activity) {
         this.activity = activity;
     }
 
@@ -40,11 +40,20 @@ public class IndividualAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = new ViewHolder();
         if (view == null) {
-            view = View.inflate(activity, R.layout.item_adapter_individual, null);
+            view = View.inflate(activity, R.layout.item_adapter_my_friend, null);
+            holder.item = (LinearLayout) view.findViewById(R.id.item);
+            holder.listener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    Intent intent = new Intent(activity, ServeDetailActivity.class);
+//                    activity.startActivity(intent);
+                }
+            };
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
+        holder.item.setOnClickListener(holder.listener);
         return view;
     }
 

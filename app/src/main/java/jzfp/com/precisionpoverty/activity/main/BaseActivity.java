@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.activity;
+package jzfp.com.precisionpoverty.activity.main;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

@@ -1,7 +1,6 @@
-package jzfp.com.precisionpoverty.adapter;
+package jzfp.com.precisionpoverty.adapter.individual;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,33 +8,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jzfp.com.precisionpoverty.R;
 
 /**
  * Created by JammyQtheLab on 2015/12/16.
  */
-public class AreaSpinnerAdapter extends BaseAdapter {
+public class IndividualAdapter extends BaseAdapter {
 
-    private List<String> mDatas = new ArrayList<>();
-
-    public AreaSpinnerAdapter(Activity activity, List<String> mDatas) {
+    public IndividualAdapter(Activity activity) {
         this.activity = activity;
-        this.mDatas = mDatas;
     }
 
     private Activity activity;
 
     @Override
     public int getCount() {
-        return mDatas.size();
+        return 8;
     }
 
     @Override
-    public String getItem(int i) {
-        return mDatas.get(i);
+    public Object getItem(int i) {
+        return new Object();
     }
 
     @Override
@@ -47,18 +40,19 @@ public class AreaSpinnerAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = new ViewHolder();
         if (view == null) {
-            view = View.inflate(activity, R.layout.item_adapter_spinner_area, null);
-            holder.tvName = (TextView) view.findViewById(R.id.tv_name);
+            view = View.inflate(activity, R.layout.item_adapter_individual, null);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        holder.tvName.setText(getItem(i));
         return view;
     }
 
     private static class ViewHolder {
-        private TextView tvName;
+        private TextView brand_name;
+        private ImageView imageView;
+        private LinearLayout item;
         private View.OnClickListener listener;
+
     }
 }

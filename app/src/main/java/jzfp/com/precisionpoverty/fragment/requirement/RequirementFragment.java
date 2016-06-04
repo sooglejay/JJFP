@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.fragment;
+package jzfp.com.precisionpoverty.fragment.requirement;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -16,10 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jzfp.com.precisionpoverty.R;
-import jzfp.com.precisionpoverty.activity.RequirementDetailActivity;
-import jzfp.com.precisionpoverty.adapter.AreaSpinnerAdapter;
-import jzfp.com.precisionpoverty.adapter.KindSpinnerAdapter;
-import jzfp.com.precisionpoverty.adapter.RequirementAdapter;
+import jzfp.com.precisionpoverty.activity.requirement.RequirementDetailActivity;
+import jzfp.com.precisionpoverty.adapter.requirement.AreaSpinnerAdapter;
+import jzfp.com.precisionpoverty.adapter.requirement.KindSpinnerAdapter;
+import jzfp.com.precisionpoverty.adapter.requirement.RequirementAdapter;
+import jzfp.com.precisionpoverty.fragment.main.BaseFragment;
 import jzfp.com.precisionpoverty.widgets.TitleBar;
 
 

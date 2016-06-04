@@ -1,4 +1,4 @@
-package jzfp.com.precisionpoverty.activity;
+package jzfp.com.precisionpoverty.activity.main;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -18,11 +18,11 @@ import com.umeng.update.UmengUpdateAgent;
 
 import jzfp.com.precisionpoverty.R;
 import jzfp.com.precisionpoverty.event.IntEvent;
-import jzfp.com.precisionpoverty.fragment.IndividualFragment;
-import jzfp.com.precisionpoverty.fragment.RequirementFragment;
-import jzfp.com.precisionpoverty.fragment.MeFragment;
-import jzfp.com.precisionpoverty.fragment.DepartmentFragment;
-import jzfp.com.precisionpoverty.fragment.ServiceFragment;
+import jzfp.com.precisionpoverty.fragment.individual.IndividualFragment;
+import jzfp.com.precisionpoverty.fragment.requirement.RequirementFragment;
+import jzfp.com.precisionpoverty.fragment.me.MeFragment;
+import jzfp.com.precisionpoverty.fragment.department.DepartmentFragment;
+import jzfp.com.precisionpoverty.fragment.serve.ServeFragment;
 import jzfp.com.precisionpoverty.widgets.ScrollableViewPager;
 import jzfp.com.precisionpoverty.widgets.TabBar;
 
@@ -111,7 +111,7 @@ public class MainActivity extends BaseActivity {
                     fragment = new RequirementFragment();
                     break;
                 case 1:
-                    fragment = new ServiceFragment();
+                    fragment = new ServeFragment();
                     break;
                 case 2:
                     fragment = new IndividualFragment();
